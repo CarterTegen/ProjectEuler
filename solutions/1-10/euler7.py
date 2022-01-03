@@ -18,10 +18,10 @@ def is_prime(num):
 
 if __name__ == '__main__':
 
-    numPrime = 1
-    n = 2
+    numPrime = 2
+    n = 1
 
-    while numPrime <= 5:
+    while numPrime <= 10001:
         if is_prime(n):
             print(numPrime, n)
             numPrime += 1
