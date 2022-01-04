@@ -1,4 +1,3 @@
-
 fibonaccis = [0, 1, 1]
 
 def fibonacci(i):
