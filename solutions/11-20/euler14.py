@@ -1,5 +1,3 @@
-
-
 def collatz(n, initial):
     #Base Case
     if n == 1:
