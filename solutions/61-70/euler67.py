@@ -1,10 +1,12 @@
 from os import pathsep
 import numpy as np
+import time
 class Node:
     def __init__(self, value) -> None:
         self.value = value
         self.max_path = 0
         self.nodes_below = []
+        self.been_visited = False
 
     def add_edge(self, to_add):
         self.nodes_below.append(to_add)
@@ -15,6 +17,7 @@ class Node:
         return self.__str__()
 
 
+start_time = time.time()
 with open('euler67.txt', 'r') as data:
     valArray = [[int(val) for val in line.strip().split()] for line in data.readlines()]
     head = Node(valArray[0][0])
@@ -50,6 +53,8 @@ while queue:
         for node in cur_node.nodes_below:
             if path_sum > node.max_path:
                 node.max_path = path_sum
+            if not node.been_visited:
                 queue.append(node)
+                node.been_visited = True
 
 print(max_path)
