@@ -7,7 +7,7 @@ while i <= 1001**2:
     sum += i
     i += dif
 
-    if j%4==0:
+    if j % 4 == 0:
         dif += 2
 
     j += 1

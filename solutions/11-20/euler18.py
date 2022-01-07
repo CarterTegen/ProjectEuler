@@ -1,6 +1,8 @@
 from os import pathsep
 import numpy as np
 import time
+
+
 class Node:
     def __init__(self, value) -> None:
         self.value = value
@@ -13,13 +15,15 @@ class Node:
 
     def __str__(self) -> str:
         return str(self.value)
+
     def __repr__(self):
         return self.__str__()
 
 
 start_time = time.time()
 with open('euler18.txt', 'r') as data:
-    valArray = [[int(val) for val in line.strip().split()] for line in data.readlines()]
+    valArray = [[int(val) for val in line.strip().split()]
+                for line in data.readlines()]
     head = Node(valArray[0][0])
     last_row_nodes = []
     row_nodes = [head]
@@ -29,11 +33,11 @@ with open('euler18.txt', 'r') as data:
 
         i = 0
         for node in last_row_nodes:
-            #Append nodes to left
+            # Append nodes to left
             node.add_edge(row_nodes[i])
 
-            #Append nodes to right
-            node.add_edge(row_nodes[i+1])
+            # Append nodes to right
+            node.add_edge(row_nodes[i + 1])
             i += 1
 
 
@@ -49,7 +53,7 @@ while queue:
     if len(cur_node.nodes_below) == 0:
         if max_path < path_sum:
             max_path = path_sum
-    else: 
+    else:
         for node in cur_node.nodes_below:
             if path_sum > node.max_path:
                 node.max_path = path_sum
@@ -58,4 +62,4 @@ while queue:
                 node.been_visited = True
 
 print(max_path)
-print(time.time()-start_time)
+print(time.time() - start_time)

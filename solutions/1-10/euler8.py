@@ -24,8 +24,8 @@ print(val)
 count = 0
 max = -1
 
-while count < len(val)-12:
-    substring = val[count:count+13]
+while count < len(val) - 12:
+    substring = val[count:count + 13]
     print(substring)
     subSum = 1
     for num in substring:

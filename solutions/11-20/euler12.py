@@ -1,18 +1,18 @@
 
 def num_factors(n):
-    if n==1:
+    if n == 1:
         return 1
-    elif n==3:
+    elif n == 3:
         return 2
 
     count = 0
-    for i in range(1, int(n**.5)+1):
+    for i in range(1, int(n**.5) + 1):
 
-        if n%i == 0:
+        if n % i == 0:
             count += 1
-            
 
-    return count*2
+    return count * 2
+
 
 num_divisors = 0
 count = 1
@@ -22,4 +22,3 @@ while num_divisors < 500:
     print(i, num_divisors)
     count += 1
     i += count
-

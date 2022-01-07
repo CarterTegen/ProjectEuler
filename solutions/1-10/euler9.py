@@ -9,4 +9,4 @@ for i in range(1000):
             continue
 
         if i + j + c == 1000:
-            print(i*j*c)
+            print(i * j * c)
